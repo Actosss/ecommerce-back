@@ -21,8 +21,8 @@ The following guides illustrate how to use some features concretely:
  
 *Project setup
 
-*mvn clean install
+   mvn clean install
 
 *RUN
 
-*mvn spring-boot:run
+   mvn spring-boot:run
