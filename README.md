@@ -1,4 +1,4 @@
-# eccommerce-back
+Spring Boot JWT Authentication Role Authorization example with MySQL Database
 ### Reference Documentation
 For further reference, please consider the following sections:
 
@@ -18,4 +18,8 @@ The following guides illustrate how to use some features concretely:
 * [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
 * [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
 * [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/)
-
+ 
+*Project setup 
+*mvn clean install
+*RUN
+*mvn spring-boot:run
