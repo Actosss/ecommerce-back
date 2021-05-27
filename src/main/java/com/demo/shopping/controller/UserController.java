@@ -37,11 +37,7 @@ public class UserController {
 	public List<CartItem> getCartItemsByCartId(@PathVariable Long id) {
 		return cartService.getCartItemsByCartId(id);
 	}
-	@PreAuthorize("hasRole('ADMIN')")
-	@RequestMapping(value = "/getCartByUserId/{id}", method = RequestMethod.GET)
-	public Cart updateCart(@PathVariable Long id  ) {
-		return cartService.getCartByUserId(id);
-	}
+
 	@PreAuthorize("hasRole('USER')")
 	@RequestMapping(value = "/cartItem/{id}", method = RequestMethod.GET)
 	public CartItem getCartItemByCartId(@PathVariable Long id ) {
@@ -49,7 +45,7 @@ public class UserController {
 	}
 	@PreAuthorize("hasRole('USER')")
 	@RequestMapping(value = "/allProducts", method = RequestMethod.GET)
-	public List<Product> getAllProducts() {
+	public List<Product> getAllProducts() { 
 		return userService.getAllProducts();
 	}
 	@PreAuthorize("hasRole('USER')")
