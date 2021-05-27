@@ -45,4 +45,9 @@ public class AdminController {
 	public Cart updateCart(@PathVariable Long id  ) {
 		return cartService.getCartByUserId(id);
 	}
+	@PreAuthorize("hasRole('ADMIN')")
+	@RequestMapping(value = "/allProducts", method = RequestMethod.GET)
+	public List<Product> getAllProducts() { 
+		return adminService.getAllProducts();
+	}
 }
