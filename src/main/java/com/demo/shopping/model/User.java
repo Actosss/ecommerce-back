@@ -1,6 +1,7 @@
 package com.demo.shopping.model;
 import javax.persistence.*;
-import com.fasterxml.jackson.annotation.JsonBackReference;
+
+
 import lombok.Getter;
 import lombok.Setter;
 import java.util.HashSet;
@@ -22,7 +23,6 @@ public class User {
 	private String phone;
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="cart_id")
-	@JsonBackReference 
 	private Cart cart;
 	@Column(name = "username")
 	private String username;
@@ -30,11 +30,9 @@ public class User {
 	private String password;
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"),
-							 inverseJoinColumns = @JoinColumn(name = "role_id"))
+			   inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles = new HashSet<>();
-	
-	User() {
-		
+	User() {	
 	}
 	public User(String username, String email, String password) {
 		this.username = username;

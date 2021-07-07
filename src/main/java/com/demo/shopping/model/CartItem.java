@@ -21,12 +21,14 @@ import lombok.Setter;
 public class CartItem {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	@Column(name="cartItem_id")
+	private Long id; 
 	@Column
 	private int quantity;
 	@Column
 	private BigDecimal totalPrice;
 	@OneToOne
+	@JoinColumn(name="product_id")
 	private Product product;
 	@JsonBackReference
 	@ManyToOne

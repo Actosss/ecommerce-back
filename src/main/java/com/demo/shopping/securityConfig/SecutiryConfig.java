@@ -53,6 +53,7 @@ public class SecutiryConfig extends WebSecurityConfigurerAdapter {
 			.authorizeRequests().antMatchers("/api/auth/**").permitAll()
 			.antMatchers("/api/admin/**").permitAll()
 			.antMatchers("/api/user/**").permitAll()
+			.antMatchers("/api/public/**").permitAll()
 			.anyRequest().authenticated();
 		http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 	}

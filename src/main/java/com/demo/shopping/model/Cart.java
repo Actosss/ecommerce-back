@@ -22,7 +22,7 @@ public class Cart {
 	private BigDecimal grandTotal;	
 	@JsonManagedReference 
 	@OneToMany(mappedBy="cart", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-	private List<CartItem> cartItem;	
+	private List<CartItem> cartItem;
 	@JsonBackReference
 	@OneToOne(mappedBy="cart", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	private User user;	

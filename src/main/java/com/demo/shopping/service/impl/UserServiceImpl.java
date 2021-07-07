@@ -1,5 +1,6 @@
-package com.demo.shopping.service.impl;
+	package com.demo.shopping.service.impl;
 import java.util.List;
+import java.util.Optional;
 
 import com.demo.shopping.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +31,8 @@ public class UserServiceImpl implements UserService {
 		return userRepository.findAll();
 	}
 	@Override
-	public User getUserById(Long id) {
-		return userRepository.getOne(id);
+	public Optional<User> getUserById(Long id) {
+		return userRepository.findById(id);
 	}
 	@Override
 	public Cart getCartByUserId(Long id) {
@@ -53,6 +54,10 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public Product getProductById(Long id) {
 		return productRepository.getOne(id);
+	}
+	@Override
+	public User getUserByEmail(String email) {
+		return userRepository.findByEmail(email);
 	}
 
 }
